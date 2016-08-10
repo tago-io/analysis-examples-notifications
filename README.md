@@ -1,5 +1,4 @@
 ## What this does
-Get Average, Minimum and Maximum value from a variable
 Get the last record from variable "water\_level", prints it to the console, multiple the value by 2 and insert in a new variable called water_level_double.
 
 ## How to use on Tago
