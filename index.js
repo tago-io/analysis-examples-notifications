@@ -8,7 +8,7 @@ const Services = require('tago/services');
  * @param  {object} context automatic received from Tago
  */
 function run_analysis(context) {
-    const notification = new Services(context.token).notification;
+    const notification = new Services(context.token).Notification;
 
     let title = "Example";
     let message = "This is a account notification example";
