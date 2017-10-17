@@ -1,5 +1,6 @@
 'use strict';
 const Analysis = require('tago/analysis');
+const Utils = require('tago/utils');
 const Services = require('tago/services');
 
 /**
@@ -7,16 +8,14 @@ const Services = require('tago/services');
  * It sends a notification to the account and another one linked to a dashboard.
  * @param  {object} context automatic received from Tago
  */
-function run_analysis(context) {
-    const notification = new Services(context.token).Notification;
+function sendNotification(context) {
+  const env_var = Utils.env_to_obj(context.environment);
+  const message = env_var.message;
+  const title = env_var.title;
+  const ref_id = env_var.dashboard_id || env_var.bucket_id || undefined;
 
-    let title = "Example";
-    let message = "This is a account notification example";
-    notification.send(title, message).then(context.log).catch(context.log);
-
-    title = "Dashboard Notification";
-    message = "This will send notification for the dashboard";
-    let ref_id = "593720f04a21870013379975"
-    notification.send(title, message, ref_id).then(context.log).catch(context.log);
+  const Notification = new Services(context.token).Notification;
+  Notification.send(title, message, ref_id).then(context.log).catch(context.log);
 }
-module.exports = new Analysis(run_analysis, 'MY-ANALYSIS-TOKEN-HERE');
+
+module.exports = new Analysis(sendNotification, 'MY-ANALYSIS-TOKEN-HERE');
