@@ -1,4 +1,18 @@
-'use strict';
+/* 
+ * Analysis Example
+ * Send Notification
+ * 
+ * Send push notifications to your Tago account
+ * 
+ * Instructions
+ * To run this analysis you need to add a device token to the environment variables,
+ * To do that, go to your device, then token and copy your token.
+ * Go the the analysis, then environment variables, 
+ * type message on key, and paste the message on you woult like to send on value.
+ * Next, add another environment variable. 
+ * Type title on key and the desired title in value.
+ */
+
 const Analysis = require('tago/analysis');
 const Utils = require('tago/utils');
 const Services = require('tago/services');
