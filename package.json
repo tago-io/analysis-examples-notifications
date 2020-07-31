@@ -1,26 +1,13 @@
 {
-  "name": "analysis-example-avg_min_max",
+  "name": "analysis-examples-notifications",
   "version": "1.0.0",
-  "description": "Get average, minimum and maximum value from a variable",
-  "main": "index.js",
+  "private": true,
+  "description": "Sends a notification to the account or a dashboard or a bucket.",
+  "main": "analysis.js",
   "dependencies": {
-    "tago": "^5.1.0"
+    "@tago-io/sdk": "^10.0.0-beta.23"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tago-io/analysis-example-avgMinMax.git"
-  },
-  "keywords": [
-    "tago"
-  ],
+  "repository": "tago-io/analysis-examples-notifications",
   "author": "Tago LLC",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tago-io/analysis-example-avgMinMax/issues"
-  },
-  "homepage": "https://github.com/tago-io/analysis-example-avgMinMax#readme"
+  "license": "MIT"
 }
