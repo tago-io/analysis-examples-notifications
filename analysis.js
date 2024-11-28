@@ -6,7 +6,7 @@ const { Analysis, Services, Utils } = require("@tago-io/sdk");
  * Optional: You can set a dashboard_id using an environment variable
  * this will show a button on the notification to send the user directly to the dashboard
  */
-async function sendNotification(context) {
+async function startAnalysis(context) {
   // reads the values from the environment variables and saves it in the variable env_vars
   const env_var = Utils.envToJson(context.environment);
 
@@ -31,7 +31,7 @@ async function sendNotification(context) {
   }
 }
 
-module.exports = new Analysis(sendNotification);
+Analysis.use(startAnalysis);
 
 // To run analysis on your machine (external)
-// module.exports = new Analysis(sendNotification, { token: "YOUR-TOKEN" });
+// Analysis.use(myAnalysis, { token: "YOUR-TOKEN" });
